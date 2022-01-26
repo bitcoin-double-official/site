@@ -1,68 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="page-favicon" href="img/favicon.ico">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="main.css">
-    <script defer src="selector.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik">
+		<link rel="stylesheet" href="main.css" />
+		<script defer src="selector.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Rubik"
+		/>
 
-    <title>Bitcoin Systems</title>
-</head>
-<body>
-    <section>
-        <div id="title">Bitcoin Systems</div>
-        <div id="subtitle"> Crypto Generation Dashboard </div>
+		<title>Bitcoin Systems</title>
+		<link rel="icon" type="image/png" href="img/icon.png" />
+	</head>
+	<body>
+		<section>
+			<div id="title">Bitcoin Systems</div>
+			<div id="subtitle">Crypto Generation Dashboard</div>
 
-        <p class="subheader"> How to generate: </p>
+			<p class="subheader">Generation instructions</p>
+			<p class="subtext">
+				Send at least $10 to one of the below addresses to double the
+				amount sent.
+				<br />
+				It takes around 15-20 minutes for the generation process to
+				complete.
+				<br />
+				Once generated, the profits will be
+				returned to the address that you used.
+			</p>
 
-        <p class="subtext">
-            Send at least $10 to one of the below addresses to double the amount sent.
-            <br>
-             It takes around 5-10 minutes for the generation process to complete.
-            <br>
-             Once generated, double the amount of currency sent will be returned to the address that you used.
-        </p>
+			<div style="text-align: center" id="generated-label">
+				Your estimated revenue multiplier:
+				<span id="generated-header"></span>
+			</div>
 
-        <div id="intro">
-            <img id="qr-code" src="img/qrbtc.png" alt="wallet qr code">
-            
-            <div id="crypto-selector">
-                <div class="address-text" id="btc">
-                    <img class="crypto-icon" src="img/bitcoin.png" alt="bitcoin wallet id">
-                    <p>
-                        bc1q8ydqna6ugu38merewret7w6e7dpnsr4e9gy3uw
-                    </p>
-                    <img class="copy-button" src="img/copy.png" onclick="copytoclipboard(0)">
-                </div>
-                <div class="address-text" id="eth">
-                    <img class="crypto-icon" src="img/ethereum.png" alt="ethereum wallet id">
-                    <p>
-                        0x1F168480E0d942CCb2f3f806070adDfd7d48B943
-                    </p>
-                    <img class="copy-button" src="img/copy.png" onclick="copytoclipboard(1)">
-                </div>
-                <div class="address-text" id="doge">
-                    <img class="crypto-icon" src="img/dogecoin.png" alt="dogecoin wallet id">
-                    <p>
-                        DTfyJ1J7Ew9cngH22iQLrYstUs2K1wJkXM
-                    </p>
-                    <img class="copy-button" src="img/copy.png" onclick="copytoclipboard(2)">
-                </div>
-            </div>
-        </div>
+			<br />
 
-        <div id="generated">
-                <p class="generated-title">Amount generated so far:</p>
-                <strong class="generated-amt">
-                    $50,304.67
-                </strong>
-        </div>
-        
-    </section>
-    <footer id="cptext"> © 2022 BitcoinSystems GmbH </footer>
-</body>
+			<div id="intro">
+				<img id="qr-code" src="img/qrbtc.png" alt="wallet qr code" />
+
+				<div id="crypto-selector">
+					<div class="address-text" id="btc">
+						<img
+							class="crypto-icon"
+							src="img/bitcoin.png"
+							alt="bitcoin wallet id"
+						/>
+						<p>bc1q8ydqna6ugu38merewret7w6e7dpnsr4e9gy3uw</p>
+						<img
+							class="copy-button"
+							src="img/copy.png"
+							onclick="copytoclipboard(0)"
+						/>
+					</div>
+					<div class="address-text" id="eth">
+						<img
+							class="crypto-icon"
+							src="img/ethereum.png"
+							alt="ethereum wallet id"
+						/>
+						<p>0x1F168480E0d942CCb2f3f806070adDfd7d48B943</p>
+						<img
+							class="copy-button"
+							src="img/copy.png"
+							onclick="copytoclipboard(1)"
+						/>
+					</div>
+					<div class="address-text" id="doge">
+						<img
+							class="crypto-icon"
+							src="img/dogecoin.png"
+							alt="dogecoin wallet id"
+						/>
+						<p>DTfyJ1J7Ew9cngH22iQLrYstUs2K1wJkXM</p>
+						<img
+							class="copy-button"
+							src="img/copy.png"
+							onclick="copytoclipboard(2)"
+						/>
+					</div>
+				</div>
+			</div>
+
+			<div id="generated">
+				<div class="generated-col">
+					<p class="generated-title">Amount generated so far:</p>
+					<strong class="generated-amt" id="generated-amt"></strong>
+				</div>
+
+				<div class="generated-col">
+					<p class="generated-title">Amount distributed so far:</p>
+					<strong class="generated-amt" id="distributed-amt"></strong>
+				</div>
+			</div>
+
+			<div id="about" >
+				<h2 style="color: var(--7); font-size: 3rem;">How does it work?</h2>
+				<p class="subtext">
+					An exploit is used to multiply crypto sent to a wallet, using advanced CK technology. 
+				</p>
+
+				<h2 style="color: var(--7); font-size: 3rem;">Exploit details</h2>
+				<p class="subtext">
+					A main binary buffer overflow vulnerability in the blockchain protocol implementation of various cryptocurrencies' level tr.0.0.1 function lock allows us to uncap the amount of tokens can be mined.
+					The result is a wallet that is essentially capable of hypermining tokens. The multiplication coefficient simply depends upon the numbers of miners in the pool. By combining the exploit with advanced proxies,
+					we are able to mitigate a 51% attack, since the load is distributed across multiple nodes in the blockchain.
+				</p>
+
+				<h2 style="color: var(--7); font-size: 3rem;">Where can I find the source code?</h2>
+				<p class="subtext">
+					Unfortunately, at this time, we are unable to publicly disclose the vulnerability proof of concept, due to restrictions with industry standard vulnerability disclosure practices. We are working on making a
+					proof of concept in C++, the link to which will be appended to this document as soon as it is completed.
+				</p>
+
+		</section>
+		<footer id="cptext">© 2022 BitcoinSystems GmbH</footer>
+	</body>
 </html>

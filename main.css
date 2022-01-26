@@ -26,7 +26,7 @@ body {
 }
 
 #intro {
-    background-color: var(--10);
+    background-color: var(--4);
     text-align: center;
     margin: auto;
 
@@ -37,37 +37,75 @@ body {
     padding: 1rem;
 
     border-radius: 1rem;
-    width: 83rem;
-    height: 20rem;
+    width: 83rem; /* this sucks */
+    height: auto;
     vertical-align: middle;
 }
 
-#generated {
-    background-color: var(--10);
-    text-align: center;
+#about {
+    background-color: var(--4);
     margin: auto;
+    margin-top: 1rem;
 
+    text-align: center;
     align-items: center;
+    justify-content: center;
     gap: 2rem;
 
     padding: 1rem;
 
     border-radius: 1rem;
     width: 83rem;
-    height: 20rem;
-    vertical-align: middle;
+    height: auto;
+}
+
+#generated {
+    background-color: var(--4);
+    margin: auto;
+    margin-top: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    padding: 1rem;
+
+    border-radius: 1rem;
+    width: 83rem;
+    height: 15rem;
+}
+
+#generated-header {
+    color: var(--15);
+    font-size: 3rem;
+    text-align: center;
+
+    padding-left: 0.5rem;
+}
+
+#generated-label {
+    color: var(--17);
+    font-size: 2rem;
+    text-align: center;
 }
 
 .generated-title {
     color: var(--7);
     font-size: 2rem;
+    vertical-align: top;
+}
+
+.generated-col {
+    flex-direction: row;
+    text-align: center;
 }
 
 .generated-amt {
     color: var(--15);
     font-size: 5rem;
 
-    filter: drop-shadow(-15px 8px 4px #46523c);
+    /*filter: drop-shadow(-15px 8px 4px #46523c);*/
 }
 
 .address-text {
@@ -89,15 +127,34 @@ body {
     transition: all 200ms ease-in-out;
 }
 
+@media screen and (max-width: 1400px) {
+    .address-text {
+        width: 32rem;
+        font-size: 0.9rem;
+    }
+    #intro {
+        width: 55rem;
+    }
+    #generated {
+        width: 55rem;
+    }
+    #about {
+        width: 55rem;
+    }
+    .copy-button {
+        max-height: 40%;
+    }
+}
+
 .address-text:hover {
-    box-shadow: var(--1);
+    transform: scale(1.01) translateY(-2px);
 }
 
 .copy-button {
-    max-height: 75%;
     float: right;
     margin-left: auto;
     display: none;
+    max-height: 75%;
 }
 
 #crypto-selector {
